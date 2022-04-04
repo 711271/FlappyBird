@@ -1,5 +1,5 @@
 public class Matrix {
-  public static float[][] add(float[][] a, float[][] b) {
+  public float[][] add(float[][] a, float[][] b) {
     float[][] c = new float[a.length][a[0].length];
     for (int i = 0; i < a.length; i++) {
       for (int j = 0; j < a[0].length; j++) {
@@ -14,7 +14,7 @@ public class Matrix {
     return c;
   }
   
-  public static float[][] mult(float[][] a, float[][] b) {
+  public float[][] mult(float[][] a, float[][] b) {
     if (a[0].length != b.length) {
       throw new RuntimeException("matrix shapes don't match");
     }
@@ -32,7 +32,7 @@ public class Matrix {
     return c;
   }
   
-  public static float[][] genRandMatrix(int rows, int cols) {
+  public float[][] genRandMatrix(int rows, int cols) {
     float[][] mat = new float[rows][cols];
     //traverse through mat matrix
     for (int i = 0; i < mat.length; i++) {
