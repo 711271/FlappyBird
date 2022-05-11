@@ -1,6 +1,7 @@
 public class Pipe {
   PVector pos;
-  final float WIDTH = 20;
+  final PVector vel = new PVector(-3,0);
+  final static float WIDTH = 20;
   float gap, botHeight, topLength;
   int id;
   
@@ -12,6 +13,10 @@ public class Pipe {
     this.id = id;
   }
   
+  public void update() {
+    pos.add(vel);
+  }
+  
   public void show() {
     fill(0);
     rect(pos.x, pos.y, WIDTH, topLength);
@@ -19,6 +24,11 @@ public class Pipe {
   }
   
   public boolean pipeVsBird(Bird b) {
-    return false;
+    return b.pos.x < pos.x + WIDTH
+    && b.pos.x + Bird.SIZE > pos.x
+    && ( b.pos.y < topLength
+    && b.pos.y + Bird.SIZE > pos.y
+    || b.pos.y + Bird.SIZE > topLength + gap    
+    );
   }
 }

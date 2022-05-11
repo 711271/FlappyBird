@@ -44,4 +44,14 @@ public class Matrix {
     //return answer
     return mat;
   }
+  
+  public static float[][] sigmoid(float[][] a) {
+    //1. ouble every number and return
+    //2. research and update sigmoid
+    for (int i =0; i <a.length; i++) {
+     for (int j; j < a[0].length; i++) {
+      a[i][j]= 1/( 1 + Math.exp(-a[i][j]); 
+     }
+    }
+  }
 }
